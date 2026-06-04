@@ -1,0 +1,38 @@
+<h2 style="text-align: center; margin-bottom: 24px; color: #1f2937; font-size: 1.5rem;">
+    Yeni Kullanıcı Kaydı
+</h2>
+
+<div class="add-or-update-bbd-record-container">
+    <form [formGroup]="userForm" (ngSubmit)="save()">
+        <div class="form-group">
+            <label for="store">Mağaza : </label>
+            <select id="store" formControlName="storeId">
+                @for (s of stores; track s.id) {
+                    <option [value]="s.id">
+                        {{s.storeCode}} - {{s.storeName}}
+                    </option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="username">Kullanıcı Kodu : </label>
+            <input 
+                id="username" 
+                formControlName="username" 
+                type="number" 
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="password">Şifre : </label>
+            <input 
+                id="password" 
+                formControlName="password" 
+                type="password" 
+            >
+        </div>
+
+        <button id="addUserButton" type="submit" [disabled]="userForm.invalid">Kaydet</button>
+    </form>
+</div>

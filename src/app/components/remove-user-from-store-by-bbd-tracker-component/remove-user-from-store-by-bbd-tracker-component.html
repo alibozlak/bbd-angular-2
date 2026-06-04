@@ -1,0 +1,26 @@
+
+@if (userIdAndCodeResponseDtoList && userIdAndCodeResponseDtoList.length > 0) {
+
+    <h2 style="text-align: center; margin-bottom: 24px; color: #1f2937; font-size: 1.5rem;">
+        Mağaza Çalışma Arkadaşları : 
+    </h2>
+
+    <div class="user-list-container">
+        @for (user of userIdAndCodeResponseDtoList; track user.id) {
+            <div class="user-list-item">
+                <div class="user-info">
+                    <span class="user-icon">👤</span>
+                    <span class="user-name">Kodu : {{user.userName}}</span>
+                </div>
+                    
+                <button class="choose-user-btn" type="button" (click)="removeUserFromStore(user.id, user.userName)">
+                    Mağazadan Çıkar
+                </button>
+            </div>
+        }
+    </div>
+} @else if (userIdAndCodeResponseDtoList && userIdAndCodeResponseDtoList.length == 0) {
+    <h2 style="text-align: center; margin-bottom: 24px; color: #1f2937; font-size: 1.5rem;">
+        Mağaza Çalışma Arkadaşı Yok :( 
+    </h2>
+}

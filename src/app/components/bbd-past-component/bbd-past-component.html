@@ -1,0 +1,32 @@
+<br><br>
+
+@if (bbdPastComponentResponseDto) {
+    <h3 style="text-align: center;">Kontrol Edilen Ürün</h3>
+    <h4>Ürün Adı : {{bbdPastComponentResponseDto.productName}} </h4>
+    <h5>Kodu : {{bbdPastComponentResponseDto.productCode}} </h5>
+    <h4 style="color: red;">
+        SKT Tarihi : {{convertLocalDateStringToTurkeyDateString(bbdPastComponentResponseDto.bestBeforeDate!)}}
+    </h4>
+
+    @if (bbdPastComponentResponseDto.quantity! > 0) {
+        <div class="action-container">
+            <button type="button" mat-flat-button color="primary" class="massive-mobile-btn" 
+                (click)="doesntExistProductButtonClicked()">
+                Ürün Satışta Yoktu
+            </button>
+        </div>
+
+        <div class="action-container">
+            <button type="button" mat-flat-button color="primary" class="massive-mobile-btn" 
+                (click)="removedSaleBbdPastProductButtonClicked()">
+                Ürünü Satıştan Kaldırdım
+            </button>
+        </div>
+    } @else {
+        <h2 style="color: green; text-align: center;">
+            Ürün Satışta Yok
+        </h2>
+    }
+}
+
+

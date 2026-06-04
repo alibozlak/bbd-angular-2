@@ -1,0 +1,35 @@
+<div class="login-container">
+  <h2 style="text-align: center;">Giriş</h2>
+  
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label for="userName">Kullanıcı Kodu</label>
+      <input 
+        id="userName" 
+        type="text" 
+        formControlName="userName" 
+        placeholder="Kullanıcı kodunuzu girin"
+      />
+      @if (loginForm.get('userName')?.invalid && loginForm.get('userName')?.touched) {
+        <small style="color: red;">Kullanıcı adı zorunludur.</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="password">Şifre</label>
+      <input 
+        id="password" 
+        type="password" 
+        formControlName="password" 
+        placeholder="Şifrenizi girin"
+      />
+      @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+        <small style="color: red;">Şifre zorunludur.</small>
+      }
+    </div>
+
+    <button id="enterUserButton" type="submit" [disabled]="loginForm.invalid">Giriş Yap</button>
+  
+  </form>
+</div>

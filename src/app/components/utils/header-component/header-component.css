@@ -1,0 +1,19 @@
+/* Flexbox rule to push the menu to the far right */
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+/* Warning tone for the logout text (Material Red) */
+.danger-text {
+    color: #f44336;
+    font-weight: 500;
+}
+
+/* Adding some shadow to the Material Toolbar for depth */
+.mat-elevation-z4 {
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 
+                0px 4px 5px 0px rgba(0, 0, 0, 0.14), 
+                0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 10;
+}

@@ -1,0 +1,18 @@
+.action-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.qty-select {
+    width: 100px;
+}
+
+button {
+    height: 56px; /* Matches the height of the outline form field */
+    flex-grow: 1;
+    max-width: 200px;
+}

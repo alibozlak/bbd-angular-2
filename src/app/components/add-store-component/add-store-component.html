@@ -1,0 +1,28 @@
+<h2 style="text-align: center; margin-bottom: 24px; color: #1f2937; font-size: 1.5rem;">
+    Yeni Mağaza Kaydı
+</h2>
+
+<div class="create-store-container">
+    <form [formGroup]="createStoreForm" (ngSubmit)="createStore()">
+        
+        <div class="form-group">
+            <label for="storeName">Mağaza Adı : </label>
+            <input 
+                id="storeName" 
+                formControlName="storeName" 
+                type="text" 
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="storeCode">Mağaza Kodu : </label>
+            <input 
+                id="storeCode" 
+                formControlName="storeCode" 
+                type="text" 
+            >
+        </div>
+
+        <button id="createStoreButton" type="submit" [disabled]="createStoreForm.invalid">Kaydet</button>
+    </form>
+</div>

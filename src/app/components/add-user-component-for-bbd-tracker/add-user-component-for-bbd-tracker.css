@@ -1,0 +1,130 @@
+.add-or-update-bbd-record-container {
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: #f4f5f7; 
+    min-height: 100vh;
+}
+
+.show-empty-users-container {
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: #f4f5f7; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    background: #ffffff;
+    padding: 24px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 14px; 
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px; 
+    box-sizing: border-box;
+    background-color: #f9fafb;
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #3f51b5; /* Angular Material Primary Color */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.15);
+}
+
+#addUserButton {
+    margin-top: 8px;
+    padding: 16px;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%; 
+}
+
+#addUserButton:active {
+    transform: scale(0.98); 
+}
+
+#addUserButton:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.user-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Satırlar arası boşluk */
+    padding: 0 16px; 
+    margin-bottom: 32px;
+}
+
+.user-list-item {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.user-list-item:active {
+    border-color: #3f51b5;
+    background-color: #f9fafb;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: #374151;
+    font-size: 16px;
+}
+
+.choose-user-btn {
+    background-color: transparent;
+    color: #3f51b5;
+    border: 2px solid #3f51b5;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.choose-user-btn:active {
+    background-color: #3f51b5;
+    color: white;
+    transform: scale(0.95);
+}

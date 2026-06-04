@@ -1,0 +1,61 @@
+.adminButtonSpace {
+    margin: 10px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.action-container {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0; 
+}
+
+.massive-mobile-btn {
+    width: 90%; 
+    max-width: 400px; 
+    padding: 24px 16px !important;
+    font-size: 1.2rem !important; 
+    border-radius: 12px !important; 
+}
+
+.massive-mobile-btn mat-icon {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+h3 {
+    margin-left: 5px;
+}
+
+.clickable-card {
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+    position: relative; /* Required for matRipple to stay inside the card */
+    overflow: hidden; /* Ensures ripple doesn't leak out of rounded corners */
+    margin-bottom: 12px;
+}
+
+/* Subtle elevation change on hover (mostly for desktop testing) */
+.clickable-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+
+/* Visual feedback for the "tap" on mobile */
+.clickable-card:active {
+    transform: scale(0.98);
+}
+
+.negative-impact {
+    color: #d32f2f; /* Material Red for visual warning */
+    font-weight: bold;
+}
+
+.expired-card {
+    border-left: 6px solid #d32f2f !important;
+}
+
+.expired-card mat-card-title {
+    color: #d32f2f;
+}

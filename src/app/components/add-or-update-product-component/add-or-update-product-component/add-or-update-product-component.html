@@ -1,0 +1,58 @@
+
+<h2 style="text-align: center; margin-bottom: 24px; color: #1f2937; font-size: 1.5rem;">
+    Yeni Ürün Kaydı
+</h2>
+
+<div class="add-or-update-product-container">
+    <form [formGroup]="addOrUpdateProductForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="productName">Ürün Adı : </label>
+            <input 
+                id="productName" 
+                formControlName="productName" 
+                type="text" 
+                placeholder="Ürün adını girin"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="productCode">Ürün Kodu : </label>
+            <input 
+                id="productCode" 
+                formControlName="productCode" 
+                type="text" 
+                placeholder="Ürün kodunu girin (7 haneli)"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="price">Fiyatı : </label>
+            <input 
+                id="price" 
+                formControlName="price" 
+                type="number" 
+                placeholder="Ürünün Güncel Fiyatını Girin"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="tax">KDV Oranı : </label>
+            <select id="tax" formControlName="tax">
+                @for (tax of taxes; track tax) {
+                    <option [value]="tax">% {{ tax }}</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="bestBefore">Kaç Gün Önceden Kalkacağı : </label>
+            <select id="bestBefore" formControlName="bestBefore">
+                @for (removalDate of removalDates; track removalDate) {
+                    <option [value]="removalDate">{{ removalDate }}</option>
+                }
+            </select>
+        </div>
+
+        <button id="addProductButton" type="submit" [disabled]="addOrUpdateProductForm.invalid">Ekle</button>
+    </form>
+</div>

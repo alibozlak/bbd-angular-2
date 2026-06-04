@@ -1,0 +1,40 @@
+<h2 style="text-align: center; margin-bottom: 24px; color: #1f2937; font-size: 1.5rem;">
+    SKT Kaydı Düzenleme
+</h2>
+
+
+<div class="add-or-update-bbd-record-container">
+    <form [formGroup]="bbdForm" (ngSubmit)="onUpdate()">
+        <div class="form-group">
+            <label for="product">Ürün : </label>
+            <select id="product" formControlName="productId">
+                @for (product of products; track product) {
+                    <option [value]="product.id">
+                        {{product.productCode}} - {{product.productName}} ({{product.price}} TL)
+                    </option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Tarih : </label>
+            <input 
+                id="date" 
+                formControlName="bestBeforeDate" 
+                type="date" 
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Adet : </label>
+            <input 
+                id="quantity" 
+                formControlName="quantity" 
+                type="number" 
+                min="1"
+            >
+        </div>
+
+        <button id="addProductButton" type="submit" [disabled]="bbdForm.invalid">Güncelle</button>
+    </form>
+</div>
