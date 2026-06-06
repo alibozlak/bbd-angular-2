@@ -9,7 +9,7 @@ import { ChangePasswordRequestDto } from '../../models/user/change-password-requ
 import { UserIdAndCodeForAddUserByTrackerResponseDto } from '../../models/user/user-id-and-code-response.model';
 import { AddStoreToUserRequestDto } from '../../models/user/add-store-to-user-request.model';
 import { RequestDtoForListCoworkers } from '../../models/user/request-dto-for-list-coworkers.model';
-import { IsBbdTrackerAndBbdTrackerIdResponseDto } from '../../models/user/is-bbd-tracker-and-tracker-id.model';
+import { IsBbdTrackerResponseDto } from '../../models/user/is-bbd-tracker-and-tracker-id.model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +17,7 @@ import { IsBbdTrackerAndBbdTrackerIdResponseDto } from '../../models/user/is-bbd
 export class UserService {
   
   private httpClient : HttpClient = inject(HttpClient);
-  private userApiUrl : string = baseBbdApiUrl + "/users";
+  private userApiUrl : string = baseBbdApiUrl + "/users/v1";
 
   public getStoreIdByUserId(userId : number) : Observable<ResponseBodyWithObject<number>> {
     return this.httpClient.post<ResponseBodyWithObject<number>>(`${this.userApiUrl}/get-store-id-by-user-id`, userId);
@@ -31,9 +31,9 @@ export class UserService {
     return this.httpClient.post<ResponseBody>(`${this.userApiUrl}/change-password`, changePasswordRequestDto);
   }
 
-  public getIsUserABbdTracker(userId : number) : Observable<ResponseBodyWithObject<IsBbdTrackerAndBbdTrackerIdResponseDto>> {
+  public getIsUserABbdTracker() : Observable<IsBbdTrackerResponseDto> {
     return this.httpClient
-      .get<ResponseBodyWithObject<IsBbdTrackerAndBbdTrackerIdResponseDto>>(`${this.userApiUrl}/is-user-a-bbd-tracker/${userId}`);
+      .get<IsBbdTrackerResponseDto>(`${this.userApiUrl}/is-user-a-bbd-tracker`);
   }
 
   public getUserIdAndCodeResponseDtoList() : Observable<UserIdAndCodeForAddUserByTrackerResponseDto[]> {

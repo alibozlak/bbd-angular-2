@@ -21,14 +21,9 @@ export class HeaderComponent implements OnInit {
   public isUserABbdTracker : Boolean | undefined;
 
   ngOnInit(): void {
-    
-    const userId = user.getUserId();
-    this.userService.getIsUserABbdTracker(userId).subscribe({
+    this.userService.getIsUserABbdTracker().subscribe({
       next : (response) => {
-        this.isUserABbdTracker = response.object.isUserABbdTracker;
-        if (this.isUserABbdTracker)
-          localStorage.setItem("bbdTrackerId", response.object.bbdTrackerId.toString());
-        
+        this.isUserABbdTracker = response.isUserABbdTracker;        
       },
 
       error : (error) => {

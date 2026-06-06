@@ -1,4 +1,3 @@
-export interface IsBbdTrackerAndBbdTrackerIdResponseDto {
+export interface IsBbdTrackerResponseDto {
     isUserABbdTracker : Boolean;
-    bbdTrackerId : number;
 }

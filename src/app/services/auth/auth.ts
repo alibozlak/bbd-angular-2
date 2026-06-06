@@ -11,7 +11,7 @@ import { baseBbdApiUrl } from '../base-api-url';
 export class Auth {
   
   private httpClient = inject(HttpClient);
-  private apiUrl = baseBbdApiUrl+"/auth";
+  private apiUrl = baseBbdApiUrl+"/auth/v1";
   public isAuthenticated = signal<boolean>(false);
   
   public login(loginRequestModel : LoginRequestModel) : Observable<AuthResponseModel> {
@@ -20,17 +20,6 @@ export class Auth {
       tap((response) => {
         this.isAuthenticated.set(true);
         localStorage.setItem('accessToken', response.accessToken);
-        localStorage.setItem('userId', response.userId.toString());
-
-        for(let activityType of response.activityTypes){
-          localStorage.setItem(activityType.activityType, activityType.id.toString());
-        }
-        
-        if (response.isUserAdmin) {
-          localStorage.setItem('role', "admin");
-        } else {
-          localStorage.setItem('role', "user");
-        }
       })
     );
   }
