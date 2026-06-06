@@ -26,7 +26,7 @@ export class Login {
   onSubmit() {
     if (this.loginForm.valid) {
       const loginRequsetModel: LoginRequestModel = {
-        userName: this.loginForm.getRawValue().userName!,
+        userCode: this.loginForm.getRawValue().userName!,
         password: this.loginForm.getRawValue().password!
       };
 
@@ -35,7 +35,7 @@ export class Login {
           this.router.navigate(['/'], { replaceUrl : true });
         },
         error: (error) => {
-          console.error(error);
+          console.log(error);
           localStorage.clear();
           alert("Kullanıcı kodu veya şifre hatalı!");
         }
